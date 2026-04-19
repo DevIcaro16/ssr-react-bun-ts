@@ -1,0 +1,59 @@
+.home {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.home__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 0.5rem;
+}
+
+.home__meta {
+  font-size: 0.85rem;
+  color: #718096;
+  margin: 0;
+}
+
+.home__meta-value {
+  background: #e2e8f0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.home__controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.home__sort-btn {
+  background: #4a5568;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.home__sort-btn:hover {
+  background: #2d3748;
+}
+
+.home__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+}

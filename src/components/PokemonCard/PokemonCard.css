@@ -1,0 +1,76 @@
+.pokemon-card {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.pokemon-card--favorited {
+  box-shadow: 0 4px 16px rgba(220, 50, 50, 0.25);
+  transform: translateY(-2px);
+}
+
+.pokemon-card__favorite {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  line-height: 1;
+}
+
+.pokemon-card__sprite {
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+}
+
+.pokemon-card__name {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #2d3748;
+}
+
+.pokemon-card__types {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pokemon-card__type {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+  background: #a8a878;
+}
+
+.pokemon-card__type--fire     { background: #f08030; }
+.pokemon-card__type--water    { background: #6890f0; }
+.pokemon-card__type--grass    { background: #78c850; }
+.pokemon-card__type--electric { background: #f8d030; color: #333; }
+.pokemon-card__type--poison   { background: #a040a0; }
+.pokemon-card__type--flying   { background: #98d8d8; color: #333; }
+.pokemon-card__type--bug      { background: #a8b820; }
+.pokemon-card__type--normal   { background: #a8a878; }
+.pokemon-card__type--fairy    { background: #ee99ac; }
+.pokemon-card__type--psychic  { background: #f85888; }
+.pokemon-card__type--rock     { background: #b8a038; }
+.pokemon-card__type--ground   { background: #e0c068; color: #333; }
+.pokemon-card__type--ice      { background: #98d8d8; color: #333; }
+.pokemon-card__type--dragon   { background: #7038f8; }
+.pokemon-card__type--ghost    { background: #705898; }
+.pokemon-card__type--fighting { background: #c03028; }
+.pokemon-card__type--steel    { background: #b8b8d0; color: #333; }
+.pokemon-card__type--dark     { background: #705848; }
