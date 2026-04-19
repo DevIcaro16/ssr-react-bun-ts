@@ -32,12 +32,23 @@ export async function getServerSideProps(): Promise<{ props: HomeProps }> {
   };
 }
 
+const PAGE_SIZE = 12;
+
 export default function Home({ pokemons, fetchedAt }: HomeProps) {
   const [sortAlpha, setSortAlpha] = React.useState(false);
+  const [page, setPage] = React.useState(0);
 
   const sorted = sortAlpha
     ? [...pokemons].sort((a, b) => a.name.localeCompare(b.name))
     : pokemons;
+
+  const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+  const paginated = sorted.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+
+  function handleSort() {
+    setSortAlpha((s) => !s);
+    setPage(0);
+  }
 
   return (
     <main className="home">
@@ -49,17 +60,33 @@ export default function Home({ pokemons, fetchedAt }: HomeProps) {
         </p>
       </header>
       <div className="home__controls">
-        <button
-          className="home__sort-btn"
-          onClick={() => setSortAlpha((s) => !s)}
-        >
+        <button className="home__sort-btn" onClick={handleSort}>
           {sortAlpha ? "Ordenar por ID" : "Ordenar A→Z"}
         </button>
       </div>
       <div className="home__grid">
-        {sorted.map((pokemon) => (
+        {paginated.map((pokemon) => (
           <PokemonCard key={pokemon.id} {...pokemon} />
         ))}
+      </div>
+      <div className="home__pagination">
+        <button
+          className="home__page-btn"
+          onClick={() => setPage((p) => p - 1)}
+          disabled={page === 0}
+        >
+          ← Anterior
+        </button>
+        <span className="home__page-info">
+          {page + 1} / {totalPages}
+        </span>
+        <button
+          className="home__page-btn"
+          onClick={() => setPage((p) => p + 1)}
+          disabled={page >= totalPages - 1}
+        >
+          Próxima →
+        </button>
       </div>
     </main>
   );
