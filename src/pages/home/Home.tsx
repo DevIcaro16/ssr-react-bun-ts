@@ -3,7 +3,7 @@ import type { HomeProps, PokemonData } from "../../types/pokemon";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 
 export async function getServerSideProps(): Promise<{ props: HomeProps }> {
-  const listRes = await fetch("https://pokeapi.co/api/v2/pokemon?limit=12");
+  const listRes = await fetch("https://pokeapi.co/api/v2/pokemon?limit=50");
   const list = (await listRes.json()) as { results: { url: string }[] };
 
   const pokemons: PokemonData[] = await Promise.all(
