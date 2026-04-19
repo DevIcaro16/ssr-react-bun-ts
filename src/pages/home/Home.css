@@ -57,3 +57,40 @@
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1.5rem;
 }
+
+.home__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.home__page-btn {
+  background: #4a5568;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.home__page-btn:hover:not(:disabled) {
+  background: #2d3748;
+}
+
+.home__page-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.home__page-info {
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 500;
+  min-width: 4rem;
+  text-align: center;
+}
